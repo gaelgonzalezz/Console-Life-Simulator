@@ -1,4 +1,4 @@
-# Sims-Consola
+# Sims Consola
 
 Este es un simulador de vida por consola en Java, inspirado en *The Sims* y *GTA*.
 Tendrás que administrar a tu personaje y decidir que hacer en cada turno. Las decisiones que tomes tendran impacto en las estadísticas de tu PJ.
