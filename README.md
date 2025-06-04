@@ -28,16 +28,6 @@ Tendrás que administrar a tu personaje y decidir que hacer en cada turno. Las d
 3. Ejecutá la clase principal y empezá a jugar desde la consola.
 
 
-## Estructura del programa 📦
-
-Sims-Consola/
-├── entidades/         # Lógica del jugador y sus acciones
-├── interfaz/          # Enums o minijuegos (como cara o cruz)
-├── util/              # Utilidades generales (input, random, etc.)
-├── principal/         # Punto de entrada y controlador principal
-└── README.md
-
-
 ## Mejoras a futuro 💡
 - Guardado y cargado de partidas.
 - Sistema de logros y niveles (al estilo habilidades del *GTA San Andreas*).
