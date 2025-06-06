@@ -105,7 +105,7 @@ public class JuegoPrincipal {
 	                try {
 	                    System.in.read();
 	                } catch (Exception e) {
-	                    // Ignore
+	                     System.out.println("Error al esperar: " + e.getMessage());
 	                }
 			
 			 }
