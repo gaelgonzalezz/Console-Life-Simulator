@@ -22,7 +22,7 @@ Tendrás que administrar a tu personaje y decidir que hacer en cada turno. Las d
 ## Como ejecutar el juego 🛠️
 
 1. Clona el repositorio en la bash de git: 
-       git clone https://github.com/gaelgonzalezz/Sims-Consola.git
+       git clone https://github.com/gaelgonzalezz/Console-Life-Simulator.git
 2. Abrilo con Eclipse o tu IDE compatible preferido.
 3. Ejecutá la clase principal y empezá a jugar desde la consola.
 
