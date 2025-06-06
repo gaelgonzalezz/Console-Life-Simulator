@@ -42,7 +42,7 @@ public class JuegoPrincipal {
 					7. Ejercitarse
 					8. Apostar
 					9. Salir a pasear
-					10. Robar en la tienda
+					10. Robar tienda
 					11. Jugar videojuegos
 					12. Salir del juego
 					""");
