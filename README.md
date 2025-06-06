@@ -1,6 +1,6 @@
-# Sims Consola
+# Console Life Simulator
 
-Este es un simulador de vida por consola en Java, inspirado en *The Sims* y *GTA*.
+*Console Life Simulator* es un simulador de vida jugador por consola en Java, inspirado en *The Sims* y *GTA*.
 Tendrás que administrar a tu personaje y decidir que hacer en cada turno. Las decisiones que tomes tendran impacto en las estadísticas de tu PJ.
 
 
@@ -8,7 +8,7 @@ Tendrás que administrar a tu personaje y decidir que hacer en cada turno. Las d
 
 - Gestión de personaje (nombre, vida, dinero, inteligencia, felicidad, hambre, sueño y suciedad).
 - Sistema de turnos con menú interactivo.
-- Acciones variadas: Trabajar, comer, dormir, bañarse, estudiar, ejercitarse, pasear, apostar, ver TV, jugar videojuegos.
+- Acciones variadas: Trabajar, comer, dormir, bañarse, estudiar, ejercitarse, pasear, apostar, robar tienda, jugar videojuegos.
 - Eventos aleatorios: peligro al pasear, chance de ser arrestado al robar.
 - Sistema de límites y penalizaciones si el personaje no se cuida.
 
@@ -16,7 +16,6 @@ Tendrás que administrar a tu personaje y decidir que hacer en cada turno. Las d
 ## Tecnologías utilizadas 🧠
 
 - Java 17+
-- Git y GitHub.
 - Eclipse IDE.
 
 
