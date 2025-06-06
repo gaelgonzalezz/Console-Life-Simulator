@@ -158,33 +158,53 @@ public abstract class Personaje {
 	    		if(victoria) {
 	    			System.out.println("🎉 ¡Ganaste!");
 	    			this.dinero += apuesta;
-	    			this.felicidad = limitarValor(this.felicidad + 20);
+	    			this.felicidad = limitarValor(this.felicidad + 15);
 	    		} else {
 	    			System.out.println("😞 Perdiste...");
 	    			this.dinero -= apuesta;
-	    			this.felicidad = limitarValor(this.felicidad - 10);
+	    			this.felicidad = limitarValor(this.felicidad - 15);
 	    		}
 	    		
 	    		
 	    	} else if(opcionJuego == 2) {
-	        	
-	        	System.out.println("🎡 ¿Cuánto vas a apostar?");
-		        int apuesta = Utilidades.ingresarEntero(1, this.dinero);
-		        System.out.println("Elige un número del 0 al 36:");
-		        int numeroElegido = Utilidades.ingresarEntero(0, 36);
-		        
-		        int numeroGanador = Utilidades.generarAleatorioInt(0, 36);
-		        
-		        if(numeroElegido == numeroGanador) {
-		            System.out.println("🎉 ¡Ganaste!");
-		            this.dinero += apuesta * 37;
-		            this.felicidad = limitarValor(this.felicidad + 30);
-		        } else {
-		            System.out.println("😞 Perdiste...");
-		            this.dinero -= apuesta;
-		            this.felicidad = limitarValor(this.felicidad - 20);
-		        }
-	        }
+	    		  System.out.println("🎡 ¿A cuántos números vas a apostar? Puedes apostar de 1 a 12 números por tirada.");
+	    		    int cantidadNumeros = Utilidades.ingresarEntero(1, 12);
+	    		    int[] numerosApostados = new int[cantidadNumeros];
+	    		    int[] apuestasPorNumero = new int[cantidadNumeros];
+	    		    int totalApostado = 0;
+
+	    		    for(int i = 0; i < cantidadNumeros; i++) {
+	    		        System.out.println("Elige el número " + (i+1) + " (0 a 36):");
+	    		        numerosApostados[i] = Utilidades.ingresarEntero(0, 36);
+	    		        System.out.println("¿Cuánto quieres apostar a este número? (Dinero restante: $" + (this.dinero - totalApostado) + ")");
+	    		        int apuesta = Utilidades.ingresarEntero(1, this.dinero - totalApostado);
+	    		        apuestasPorNumero[i] = apuesta;
+	    		        totalApostado += apuesta;
+	    		    }
+
+	    		    int numeroGanador = Utilidades.generarAleatorioInt(0, 36);
+	    		    int indiceGanador = -1;
+	    		    for(int i = 0; i < cantidadNumeros; i++) {
+	    		        if(numerosApostados[i] == numeroGanador) {
+	    		            indiceGanador = i;
+	    		            break;
+	    		        }
+	    		    }
+
+	    		    System.out.println("Salió el número " + numeroGanador);
+	    		    if(indiceGanador != -1) {
+	    		        int ganancia = (apuestasPorNumero[indiceGanador] * 36);
+	    		        int perdida = totalApostado - apuestasPorNumero[indiceGanador];
+	    		        int neto = ganancia - perdida;
+	    		        System.out.println("🎉 ¡Ganaste! Ganancia neta: $" + neto);
+	    		        this.dinero += neto;
+	    		        this.felicidad = limitarValor(this.felicidad + 25);
+	    		    } else {
+	    		        System.out.println("😞 Perdiste...");
+	    		        this.dinero -= totalApostado;
+	    		        this.felicidad = limitarValor(this.felicidad - 25);
+	    		    }
+	    		}
 	    }
 	    
 	    public void robarTienda() {
