@@ -9,7 +9,7 @@ import util.Utilidades;
 public class Principal {
     public static void main(String[] args) {
         System.out.println("===================================");
-        System.out.println("    Bienvenido al SIMS consola    ");
+        System.out.println("    Bienvenido al Console Life Simulator    ");
         System.out.println("===================================");
         
         System.out.println("¿Deseas darle un nombre a tu PJ o quieres que sea aleatorio?");
