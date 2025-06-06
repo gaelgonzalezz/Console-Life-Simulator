@@ -140,22 +140,50 @@ public abstract class Personaje {
 	        this.suciedad = limitarValor(this.suciedad + 25);
 	    }
 	    
-	    public void apostar() {
-	        System.out.println("🎲 ¿Cuánto vas a apostar?");
-	        int apuesta = Utilidades.ingresarEntero(1, this.dinero);
-	        System.out.println("Elige: 1. Cara 🪙  2. Cruz ⚡");
-	        int opc = Utilidades.ingresarEntero(1, 2);
+	     public void apostar() {
+	    	System.out.println("A que juego queres jugar?");
+	    	System.out.println("1. Cara o Cruz 🪙⚡");
+	    	System.out.println("2. Ruleta 🎡");
+	    	
+	    	int opcionJuego = Utilidades.ingresarEntero(1, 2);
+	    	
+	    	if(opcionJuego == 1) {
+	    		System.out.println("🎲 ¿Cuánto vas a apostar?");
+	    		int apuesta = Utilidades.ingresarEntero(1, this.dinero);
+	    		System.out.println("Elige: 1. Cara 🪙  2. Cruz ⚡");
+	    		int opc = Utilidades.ingresarEntero(1, 2);
 	        
-	        boolean victoria = CaraCruz.jugar(opc);
-	        
-	        if(victoria) {
-	            System.out.println("🎉 ¡Ganaste!");
-	            this.dinero += apuesta;
-	            this.felicidad = limitarValor(this.felicidad + 25);
-	        } else {
-	            System.out.println("😞 Perdiste...");
-	            this.dinero -= apuesta;
-	            this.felicidad = limitarValor(this.felicidad - 15);
+	    		boolean victoria = CaraCruz.jugar(opc);
+	    		
+	    		if(victoria) {
+	    			System.out.println("🎉 ¡Ganaste!");
+	    			this.dinero += apuesta;
+	    			this.felicidad = limitarValor(this.felicidad + 20);
+	    		} else {
+	    			System.out.println("😞 Perdiste...");
+	    			this.dinero -= apuesta;
+	    			this.felicidad = limitarValor(this.felicidad - 10);
+	    		}
+	    		
+	    		
+	    	} else if(opcionJuego == 2) {
+	        	
+	        	System.out.println("🎡 ¿Cuánto vas a apostar?");
+		        int apuesta = Utilidades.ingresarEntero(1, this.dinero);
+		        System.out.println("Elige un número del 0 al 36:");
+		        int numeroElegido = Utilidades.ingresarEntero(0, 36);
+		        
+		        int numeroGanador = Utilidades.generarAleatorioInt(0, 36);
+		        
+		        if(numeroElegido == numeroGanador) {
+		            System.out.println("🎉 ¡Ganaste!");
+		            this.dinero += apuesta * 37;
+		            this.felicidad = limitarValor(this.felicidad + 30);
+		        } else {
+		            System.out.println("😞 Perdiste...");
+		            this.dinero -= apuesta;
+		            this.felicidad = limitarValor(this.felicidad - 20);
+		        }
 	        }
 	    }
 	    
@@ -173,7 +201,7 @@ public abstract class Personaje {
 				this.dinero = limitar0(this.dinero + 300);
 				this.felicidad = limitarValor(this.felicidad + 15);
 			}
-		}
+	    }
 	    
 	    public void pasear() {
 	        System.out.println("🚶 ¡Aire fresco!");
