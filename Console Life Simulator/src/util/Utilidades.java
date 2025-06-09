@@ -23,17 +23,13 @@ public class Utilidades {
                     System.out.println("Número fuera de rango.");
                 }
             } catch (InputMismatchException e) {
-                String texto = s.next(); // Tomamos la entrada como texto
-
-                // Check if cheatManager is not null before calling ejecutarCheat
+                String texto = s.next(); 
                 if (cheatManager != null && cheatManager.ejecutarCheat(texto)) {
-                    continue; // cheat ejecutado, volver a pedir número
+                    continue;
                 }
-
                 System.out.println("Entrada inválida. Ingrese un número o un comando válido.");
             }
         }
-
         return numero;
     }
     
